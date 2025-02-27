@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página oficial de VARON DE FE, ministro urbano cristiano. Escucha su música, conoce su biografía y entérate de sus próximos eventos.">
+    <meta name="keywords" content="VARON DE FE, rap cristiano, música cristiana, eventos cristianos">
+    <meta name="author" content="VARON DE FE">
+    <title>VARON DE FE - Rap Cristiano</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<style>
+   :root {
+    --color-primario: #333;
+    --color-secundario: #fff;
+    --color-whatsapp: #25D366;
+    --color-facebook: #1877F2;
+    --color-instagram: #E4405F;
+    --color-youtube: #FF0000;
+    --color-tiktok: #000000;
+    --color-spotify: #1DB954;
+}
+
+    /* Estilos generales */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: var(--color-primario);
+  }
+
+    header {
+      background-color: var(--color-primario);
+      color: var(--color-secundario);
+      padding: 20px;
+      text-align: center;
+}
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+       
+        /* Estilos para el formulario de inicio de sesión */
+        #login-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #login-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #login-form button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #login-form button:hover {
+            background-color: #555;
+        }
+
+/* Contenedor del botón oculto */
+#login-hidden-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+/* Mostrar el botón cuando se pasa el cursor sobre el contenedor */
+#login-hidden-container:hover {
+    opacity: 1;
+}
+
+/* Estilos para el botón de inicio de sesión oculto */
+#btn-login-hidden {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#btn-login-hidden:hover {
+    background-color: #555;
+}
+
+/* Estilos para el botón de cerrar sesión */
+#btn-logout {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#btn-logout:hover {
+    background-color: #555;
+}
+
+
+/* Estilos para el botón de cerrar sesión */
+#btn-logout {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#btn-logout:hover {
+    background-color: #555;
+}
+        
+        /* Estilos específicos */
+        #inicio {
+            text-align: center;
+        }
+
+        #biografia {
+            text-align: justify;
+        }
+
+        #biografia .contenido-completo {
+            display: none; /* Oculta el contenido completo inicialmente */
+        }
+
+        #biografia .leer-mas {
+            color: #007BFF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        #musica, #video, #eventos, #contacto {
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366; /* Color de WhatsApp */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+        }
+
+        /* Estilos para los botones de redes sociales */
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Espacio entre botones */
+            margin-top: 20px;
+        }
+
+        .redes-sociales a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .redes-sociales a:hover {
+            opacity: 0.9;
+        }
+
+        /* Colores específicos para cada red social */
+        .facebook {
+            background-color: #1877F2; /* Azul de Facebook */
+        }
+
+        .instagram {
+            background-color: #E4405F; /* Rosa de Instagram */
+        }
+
+        .youtube {
+            background-color: #FF0000; /* Rojo de YouTube */
+        }
+
+        .tiktok {
+            background-color: #000000; /* Negro de TikTok */
+        }
+
+        .spotify {
+            background-color: #1DB954; /* Verde de Spotify */
+        }
+
+        /* Contenedor de videos con Flexbox */
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre los videos */
+            margin-top: 20px;
+        }
+
+        /* Cada video */
+        .video-item {
+            flex: 1 1 calc(50% - 10px); /* Dos videos por fila (50% del ancho) */
+            max-width: calc(50% - 10px); /* Ancho máximo de cada video */
+        }
+
+        /* Iframe del video */
+        .video-item iframe {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            height: 200px; /* Altura fija (ajusta según sea necesario) */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .video-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .plataformas-musica {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plataforma-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+  /* Contenedor de plataformas de música */
+ .plataformas-musica {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px;
+  }
+
+/* Estilos para los botones de canciones */
+.plataforma-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Colores específicos para cada canción */
+.spotify {
+    background-color: #1DB954; /* Verde de Spotify */
+}
+
+.apple-music {
+    background-color: #FF2D55; /* Rosa de Apple Music */
+}
+
+.youtube-music {
+    background-color: #FF0000; /* Rojo de YouTube Music */
+}
+
+.amazon-music {
+    background-color: #FF9900; /* Naranja de Amazon Music */
+}
+
+/* Efecto hover */
+.plataforma-button:hover {
+    opacity: 0.9;
+}
+
+/* Contenedor de la galería de fotos */
+.galeria-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crea columnas automáticas */
+    gap: 15px; /* Espacio entre las fotos */
+    margin-top: 20px;
+}
+
+/* Estilos para cada foto */
+.foto-item {
+    overflow: hidden; /* Oculta el exceso de contenido */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease; /* Efecto de transición al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+.foto-item img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio inferior de las imágenes */
+}
+
+/* Efecto hover para las fotos */
+.foto-item:hover {
+    transform: scale(1.05); /* Escala la foto al pasar el mouse */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculta el modal inicialmente */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+    overflow: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Imagen dentro del modal */
+.imagen-modal {
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 10% auto; /* Centra la imagen verticalmente */
+    border-radius: 10px;
+}
+
+/* Botones de navegación */
+.anterior, .siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+}
+
+.anterior {
+    left: 20px;
+}
+
+.siguiente {
+    right: 20px;
+}
+
+.anterior:hover, .siguiente:hover {
+    color: #ffcc00; /* Cambia el color al pasar el mouse */
+}
+
+/* Botón para cerrar el modal */
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #ffcc00; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para el formulario de añadir evento */
+#añadir-evento {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#formulario-evento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formulario-evento label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#formulario-evento input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#formulario-evento button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#formulario-evento button:hover {
+    background-color: #555;
+}
+
+/* Contenedor de eventos */
+.contenedor-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas automáticas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Estilos para la tarjeta del evento */
+.evento-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Flyer del evento */
+.evento-flyer {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Imagen del flyer dentro del modal */
+.flyer-grande {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 5% auto; /* Centra la imagen verticalmente */
+    border-radius: 10px;
+}
+
+
+/* Información del evento */
+.evento-info {
+    padding: 10px; /* Margen interno */
+    text-align: left;
+    width: 100%;
+}
+
+.evento-info h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.evento-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.evento-info strong {
+    color: #000;
+}
+
+/* Estilos para el campo de hora */
+#hora {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para el selector de hora de Flatpickr */
+.flatpickr-time {
+    background-color: #333;
+    color: #fff;
+}
+
+.flatpickr-time input {
+    color: #fff;
+}
+
+.flatpickr-time .flatpickr-time-separator {
+    color: #fff;
+}
+
+.flatpickr-time .flatpickr-am-pm {
+    color: #fff;
+}
+
+/* Detalles del evento */
+.evento-detalle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0; /* Margen superior e inferior */
+    width: 100%;
+}
+
+.evento-detalle i {
+    font-size: 16px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.evento-detalle p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.evento-detalle strong {
+    color: #000;
+}
+
+
+    </style>
+</head>
+<body>
+  <!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/Kz3KMnfq/photo-5039893652704440247-y.jpg" alt="Logotipo de VARON DE FE" class="logo">
+        </div>
+        <h1>VARON DE FE</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#biografia">Biografía</a></li>
+                <li><a href="#musica">Música</a></li>
+                <li><a href="#fotos">Fotos</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+   
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a mi página web</h2>
+            <p>Soy VARON DE FE, Ministro Urbano cristiano comprometido con llevar un mensaje de fe y esperanza a través de la música.</p>
+        </section>
+
+        <section id="biografia">
+            <h2>Biografía</h2>
+            <p>Inicié mi camino en el rap en 1997...</p>
+            <div class="contenido-resumido">
+                <p>
+                    Yovani Sánchez Noa inició su carrera en el rap en 1997, como parte de un grupo de amigos del barrio. En 1999, su primo lo invitó a la Iglesia Católica, donde descubrió una nueva forma de vivir y decidió dejar el grupo para crear su propio proyecto musical.
+                </p>
+                <p class="leer-mas">Leer más...</p>
+            </div>
+            <div class="contenido-completo">
+                <p>
+                    En ese tiempo, Yovani formó el primer grupo de Rap Católico en Cuba. Inicialmente eran tres integrantes, pero luego decidió continuar como solista acompañado de una corista. Juntos, participaron en varios festivales y conciertos a nivel nacional, llevando un mensaje de fe a través de su música.
+                </p>
+                <p>
+                    En 2006, tuvo un reencuentro profundo e íntimo con Dios en una congregación cristiana. A partir de ese momento, decidió bautizarse y se convirtió en miembro de la congregación. Durante ese período, recibió una oferta para crear la banda sonora de una telenovela que se transmitiría en la televisión cubana con un contrato oficial. Sin embargo, rechazó esta oportunidad para seguir su camino en Cristo, utilizando sus talentos solo para glorificar a Dios.
+                </p>
+                <p>
+                    En 2007, nació oficialmente su ministerio, VARON DE FE. Desde entonces, ha perseverado a pesar del desprecio y la censura. En los últimos años, ha comenzado a ganar reconocimiento, ya que en años anteriores el acceso a Internet era limitado para él.
+                </p>
+                <p>
+                    Realizó un breve paréntesis en su carrera musical tras el nacimiento de sus tres hijos, aunque nunca dejó de escribir canciones. En 2022, retomó su actividad musical con renovadas energías.
+                </p>
+                <p class="leer-menos">Leer menos...</p>
+            </div>
+        </section>
+
+        <section id="musica">
+    <h2>Música</h2>
+    <p>Escucha mis canciones en las siguientes plataformas:</p>
+    <div class="plataformas-musica">
+        <!-- Esencia -->
+        <a href="https://indfy.me/varon-de-fe-63c1e61931d1ed6cd334dbe6" class="plataforma-button spotify" target="_blank">
+            <i class="fas fa-music"></i> Esencia
+        </a>
+        <!-- Metralla -->
+        <a href="https://indfy.me/varon-de-fe-metralla" class="plataforma-button apple-music" target="_blank">
+            <i class="fas fa-music"></i> Metralla
+        </a>
+        <!-- Estoy de Pie -->
+        <a href="https://indfy.me/varon-de-fe-estoy-de-pie" class="plataforma-button youtube-music" target="_blank">
+            <i class="fas fa-music"></i> Estoy de Pie
+        </a>
+        <!-- MUCHOS QUIEREN -->
+        <a href="https://indfy.me/muchos-quieren" class="plataforma-button amazon-music" target="_blank">
+            <i class="fas fa-music"></i> MUCHOS QUIEREN
+        </a>
+    </div>
+</section>
+
+        <section id="fotos">
+    <h2>Fotos</h2>
+    <p>Imágenes de Estuidio/Osmin Costa.</p>
+    <div class="galeria-fotos">
+        <!-- Foto 1 -->
+        <div class="foto-item" onclick="abrirGaleria(0)">
+            <img src="https://i.ibb.co/ZRFQ9kgz/photo-5039893652704440272-y.jpg" alt="Descripción de la foto 1">
+        </div>
+        <!-- Foto 2 -->
+        <div class="foto-item" onclick="abrirGaleria(1)">
+            <img src="https://i.ibb.co/LX8H4Rwp/photo-5039893652704440273-y.jpg" alt="Descripción de la foto 2">
+        </div>
+        <!-- Foto 3 -->
+        <div class="foto-item" onclick="abrirGaleria(2)">
+            <img src="https://i.ibb.co/F4mjFTqX/photo-5039893652704440271-y.jpg" alt="Descripción de la foto 3">
+        </div>
+        <!-- Foto 4 -->
+        <div class="foto-item" onclick="abrirGaleria(3)">
+            <img src="https://i.ibb.co/4R3RGc9b/photo-5039893652704440270-y.jpg" alt="Descripción de la foto 4">
+        </div>
+        <!-- Foto 5 -->
+        <div class="foto-item" onclick="abrirGaleria(4)">
+            <img src="https://i.ibb.co/FqbTV63M/photo-5039893652704440269-y.jpg" alt="Descripción de la foto 5">
+        </div>
+      </div>
+</section>
+
+<!-- Modal de la galería -->
+<div id="modal-galeria" class="modal">
+    <span class="cerrar" onclick="cerrarGaleria()">&times;</span>
+    <span class="anterior" onclick="cambiarFoto(-1)">&#10094;</span>
+    <span class="siguiente" onclick="cambiarFoto(1)">&#10095;</span>
+    <img id="imagen-modal" class="imagen-modal">
+</div>
+
+        <section id="video">
+            <h2>Video</h2>
+            <p>Mira algunos de mis videos musicales.</p>
+            <div class="video-container">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/_Ow2ys6EDRI"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/4bKskGpetkA"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Video 3 -->
+                <div class="video-item">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/7vpMZFoba_0"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <!-- Video 4 -->
+                <div class="video-item">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/K_zCxpMDKso"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para mostrar el flyer -->
+        <div id="modal-flyer" class="modal">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <img id="flyer-grande" class="flyer-grande">
+        </div>
+
+        <section id="eventos">
+    <h2>Eventos</h2>
+    <p>Próximos conciertos y presentaciones.</p>
+    <div class="contenedor-eventos" id="contenedor-eventos">
+        <!-- Los eventos se añadirán aquí dinámicamente -->
+        <div class="evento-card">
+            <img src="https://i.ibb.co/FbT3ND0g/images.jpg" alt="Flyer del evento 1" class="evento-flyer">
+            <div class="evento-info">
+       <h3>Concierto en La Habana</h3>
+       <div class="evento-detalle">
+           <i class="fas fa-calendar-alt"></i>
+           <p><strong>Fecha:</strong> 25 de Octubre, 2023</p>
+       </div>
+       <div class="evento-detalle">
+           <i class="fas fa-clock"></i>
+           <p><strong>Hora:</strong> 19:00</p>
+       </div>
+       <div class="evento-detalle">
+           <i class="fas fa-map-marker-alt"></i>
+           <p><strong>Locación:</strong> Teatro Nacional, La Habana, Cuba</p>
+        <!-- Botones de editar y eliminar (solo visibles para el administrador) -->
+        <div class="acciones-evento" style="display: none;">
+            <button class="editar-evento" onclick="editarEvento(this)">Editar</button>
+            <button class="eliminar-evento" onclick="eliminarEvento(this)">Eliminar</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Sección Añadir Evento (oculta por defecto) -->
+<section id="añadir-evento" style="display: none;">
+    <h2>Añadir Nuevo Evento</h2>
+    <form id="formulario-evento">
+        <label for="titulo">Título del Evento:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <input type="text" id="hora" name="hora" placeholder="Selecciona la hora" required>
+
+        <label for="locacion">Locación:</label>
+        <input type="text" id="locacion" name="locacion" required>
+
+        <label for="flyer">URL del Flyer:</label>
+        <input type="url" id="flyer" name="flyer" required>
+
+        <button type="submit" aria-label="Añadir evento">Añadir Evento</button>
+    </form>
+</section>
+
+         <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¡Contáctame para eventos, colaboraciones o cualquier consulta!</p>
+            <p>
+                <a href="https://wa.me/5356959395?text=Hola%20VARON%20DE%20FE,%20me%20interesa%20contactarte%20para..." target="_blank" class="whatsapp-button">
+                    Enviar mensaje por WhatsApp
+                </a>
+            </p>
+            <!-- Redes Sociales -->
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/@VARONDEFEOFICIALMUSIC" class="facebook" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/varondefeoficialmusic?igsh=YjFqMDJjM2lzZG9u" class="instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@varondefeOficialmusic" class="youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@tu_perfil" class="tiktok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://open.spotify.com/user/31443cov5ur2kwiy7n54uo2uevaq?si=RdcuWbN8Rbu1j0jQVbrrJw" class="spotify" target="_blank">
+                    <i class="fab fa-spotify"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 VARON DE FE OFICIAL MUSIC</p>
+    </footer>
+
+     <!-- Nuevo contenedor para el botón oculto -->
+    <div id="login-container">
+    <div id="login-hidden-container">
+        <button id="btn-login-hidden" class="login-icon">
+            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+        </button>
+    </div>
+
+    <!-- Botón de cerrar sesión (oculto por defecto) -->
+    <button id="btn-logout" class="logout-icon" style="display: none;">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+
+<!-- Formulario de inicio de sesión (oculto por defecto) -->
+    <div id="login-form" style="display: none;">
+        <h2>Iniciar Sesión</h2>
+        <form id="form-login">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+
+            <button type="submit">Iniciar Sesión</button>
+            <p id="error-message" style="color: red; display: none;">Credenciales incorrectas. Inténtalo de nuevo.</p>
+        </form>
+    </div>
+
+   <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Credenciales del administrador (esto debería estar en un backend en un entorno real)
+        const credenciales = {
+            usuario: "admin",
+            contraseña: "admin123"
+        };
+
+        /// Función para mostrar el formulario de inicio de sesión
+        function mostrarLogin() {
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        // Función para validar credenciales
+        function validarCredenciales(usuario, contraseña) {
+            return usuario === credenciales.usuario && contraseña === credenciales.contraseña;
+        }
+
+       // Función para iniciar sesión
+function iniciarSesion(usuario) {
+    // Guardar el estado de la sesión en localStorage
+    localStorage.setItem("sesionActiva", "true");
+    localStorage.setItem("usuario", usuario);
+
+    // Ocultar el formulario de inicio de sesión
+    document.getElementById("login-form").style.display = "none";
+
+    // Ocultar el botón de inicio de sesión oculto
+    document.getElementById("login-hidden-container").style.display = "none";
+
+    // Mostrar la sección "Añadir Eventos"
+    document.getElementById("añadir-evento").style.display = "block";
+
+    // Mostrar el botón de cerrar sesión
+    document.getElementById("btn-logout").style.display = "block";
+
+    // Mostrar los botones de editar y eliminar en todos los eventos
+    const accionesEventos = document.querySelectorAll(".acciones-evento");
+    accionesEventos.forEach(accion => accion.style.display = "block");
+
+    // Mostrar mensaje de bienvenida
+    alert(`Bienvenido, ${usuario}!`);
+}
+
+// Función para cerrar sesión
+function cerrarSesion() {
+    // Eliminar el estado de la sesión de localStorage
+    localStorage.removeItem("sesionActiva");
+    localStorage.removeItem("usuario");
+
+    // Ocultar la sección "Añadir Eventos"
+    document.getElementById("añadir-evento").style.display = "none";
+
+    // Ocultar el botón de cerrar sesión
+    document.getElementById("btn-logout").style.display = "none";
+
+    // Mostrar el botón de inicio de sesión oculto
+    document.getElementById("login-hidden-container").style.display = "block";
+
+     // Ocultar los botones de editar y eliminar en todos los eventos
+    const accionesEventos = document.querySelectorAll(".acciones-evento");
+    accionesEventos.forEach(accion => accion.style.display = "none");
+
+    // Mostrar mensaje de despedida
+    alert("Has cerrado sesión correctamente.");
+}
+
+            // Verificar si el usuario ya está autenticado al cargar la página
+        document.addEventListener("DOMContentLoaded", function () {
+    const sesionActiva = localStorage.getItem("sesionActiva");
+
+    if (sesionActiva === "true") {
+        const usuario = localStorage.getItem("usuario");
+        iniciarSesion(usuario); // Mostrar la sección "Añadir Evento"
+        iniciarSesion(usuario); // Mostrar botones de editar y eliminar
+    } else {
+        // Ocultar la sección "Añadir Evento" si no hay sesión activa
+        document.getElementById("añadir-evento").style.display = "none";
+        // Ocultar botones de editar y eliminar si no hay sesión activa
+        const accionesEventos = document.querySelectorAll(".acciones-evento");
+        accionesEventos.forEach(accion => accion.style.display = "none");
+    }
+});
+
+        // Manejar el envío del formulario de inicio de sesión
+        document.getElementById("form-login").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("username").value.trim();
+            const contraseña = document.getElementById("password").value.trim();
+
+            if (!usuario || !contraseña) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            if (validarCredenciales(usuario, contraseña)) {
+                iniciarSesion(usuario);
+            } else {
+                document.getElementById("error-message").style.display = "block";
+            }
+        });
+
+        // Asignar la función de cerrar sesión al botón correspondiente
+        document.getElementById("btn-logout").addEventListener("click", cerrarSesion);
+
+        // Mostrar el formulario de inicio de sesión al hacer clic en el botón oculto
+        document.getElementById("btn-login-hidden").addEventListener("click", mostrarLogin);
+
+        // JavaScript para manejar el "Leer más" y "Leer menos"
+        document.addEventListener("DOMContentLoaded", function() {
+            const leerMas = document.querySelector(".leer-mas");
+            const leerMenos = document.querySelector(".leer-menos");
+            const contenidoCompleto = document.querySelector(".contenido-completo");
+            const contenidoResumido = document.querySelector(".contenido-resumido");
+
+            leerMas.addEventListener("click", function() {
+                contenidoCompleto.style.display = "block";
+                contenidoResumido.style.display = "none";
+            });
+
+            leerMenos.addEventListener("click", function() {
+                contenidoCompleto.style.display = "none";
+                contenidoResumido.style.display = "block";
+            });
+        });
+
+        // Array de imágenes de la galería
+const imagenes = [
+    "https://i.ibb.co/ZRFQ9kgz/photo-5039893652704440272-y.jpg",
+    "https://i.ibb.co/LX8H4Rwp/photo-5039893652704440273-y.jpg",
+    "https://i.ibb.co/F4mjFTqX/photo-5039893652704440271-y.jpg",
+    "https://i.ibb.co/4R3RGc9b/photo-5039893652704440270-y.jpg",
+    "https://i.ibb.co/FqbTV63M/photo-5039893652704440269-y.jpg"
+];
+
+let indiceActual = 0;
+
+// Pre-cargar imágenes
+imagenes.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
+// Función para abrir la galería
+function abrirGaleria(indice) {
+    indiceActual = indice;
+    const modal = document.getElementById("modal-galeria");
+    const imagenModal = document.getElementById("imagen-modal");
+    imagenModal.src = imagenes[indiceActual];
+    modal.style.display = "block";
+}
+
+// Función para cerrar la galería
+function cerrarGaleria() {
+    const modal = document.getElementById("modal-galeria");
+    modal.style.display = "none";
+}
+
+// Función para cambiar de foto
+function cambiarFoto(direccion) {
+    indiceActual += direccion;
+    if (indiceActual >= imagenes.length) {
+        indiceActual = 0;
+    } else if (indiceActual < 0) {
+        indiceActual = imagenes.length - 1;
+    }
+    const imagenModal = document.getElementById("imagen-modal");
+    imagenModal.src = imagenes[indiceActual];
+}
+
+// Actualizar el indicador de la imagen actual
+    const indicador = document.getElementById("indicador-imagen");
+    if (indicador) {
+        indicador.textContent = `${indiceActual + 1}/${imagenes.length}`;
+    }
+
+// Cerrar el modal al hacer clic fuera de la imagen
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("modal-galeria");
+    if (event.target === modal) {
+        cerrarGaleria();
+    }
+});
+
+   // Inicializar Flatpickr para el campo de hora
+flatpickr("#hora", {
+    enableTime: true, // Habilita la selección de hora
+    noCalendar: true, // Oculta el calendario (solo hora)
+    dateFormat: "h:i K", // Formato de 24 horas (ejemplo: 19:00)
+    time_24hr: true, // Usar formato de 24 horas
+    minuteIncrement: 15, // Incrementos de 15 minutos
+    placeholder: "Selecciona la hora", // Texto de placeholder
+});
+
+function validarURL(url) {
+    return /\.(jpeg|jpg|gif|png)$/.test(url);
+}
+
+// Función para editar un evento
+function editarEvento(botonEditar) {
+    const eventoCard = botonEditar.closest(".evento-card");
+    const titulo = eventoCard.querySelector("h3").textContent;
+    const fecha = eventoCard.querySelector(".evento-detalle:nth-child(2) p").textContent.replace("Fecha: ", "");
+    const hora = eventoCard.querySelector(".evento-detalle:nth-child(3) p").textContent.replace("Hora: ", "");
+    const locacion = eventoCard.querySelector(".evento-detalle:nth-child(4) p").textContent.replace("Locación: ", "");
+    const flyer = eventoCard.querySelector(".evento-flyer").src;
+
+// Mostrar un formulario de edición con los datos actuales
+    const nuevoTitulo = prompt("Editar título:", titulo);
+    const nuevaFecha = prompt("Editar fecha:", fecha);
+    const nuevaHora = prompt("Editar hora:", hora);
+    const nuevaLocacion = prompt("Editar locación:", locacion);
+    const nuevoFlyer = prompt("Editar URL del flyer:", flyer);
+
+    // Actualizar los datos del evento si el usuario ingresó nuevos valores
+    if (nuevoTitulo) eventoCard.querySelector("h3").textContent = nuevoTitulo;
+    if (nuevaFecha) eventoCard.querySelector(".evento-detalle:nth-child(2) p").textContent = `Fecha: ${nuevaFecha}`;
+    if (nuevaHora) eventoCard.querySelector(".evento-detalle:nth-child(3) p").textContent = `Hora: ${nuevaHora}`;
+    if (nuevaLocacion) eventoCard.querySelector(".evento-detalle:nth-child(4) p").textContent = `Locación: ${nuevaLocacion}`;
+    if (nuevoFlyer) eventoCard.querySelector(".evento-flyer").src = nuevoFlyer;
+}
+
+// Función para eliminar un evento
+function eliminarEvento(botonEliminar) {
+    const eventoCard = botonEliminar.closest(".evento-card");
+    if (confirm("¿Estás seguro de que quieres eliminar este evento?")) {
+        eventoCard.remove(); // Eliminar la tarjeta del evento
+    }
+}
+
+// Función para añadir un evento
+function añadirEvento(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+
+    // Obtener los valores del formulario
+    const titulo = document.getElementById("titulo").value.trim();
+    const fecha = document.getElementById("fecha").value.trim();
+    const hora = document.getElementById("hora").value.trim();
+    const locacion = document.getElementById("locacion").value.trim();
+    const flyer = document.getElementById("flyer").value.trim();
+    if (!validarURL(flyer)) {
+        alert("Por favor, ingresa una URL válida de imagen (JPEG, JPG, GIF, PNG).");
+        return;
+    }
+
+    if (!titulo || !fecha || !hora || !locacion || !flyer) {
+        alert("Por favor, completa todos los campos.");
+        return;
+    }
+
+    // Crear la tarjeta del evento
+    const eventoCard = document.createElement("div");
+    eventoCard.classList.add("evento-card");
+
+    // Flyer del evento
+    const flyerImg = document.createElement("img");
+    flyerImg.src = flyer;
+    flyerImg.alt = `Flyer del evento: ${titulo}`;
+    flyerImg.classList.add("evento-flyer");
+
+    // Información del evento
+    const eventoInfo = document.createElement("div");
+    eventoInfo.classList.add("evento-info");
+
+    // Título del evento
+    const tituloEvento = document.createElement("h3");
+    tituloEvento.textContent = titulo;
+
+    // Fecha del evento (con ícono)
+    const fechaEvento = document.createElement("div");
+    fechaEvento.classList.add("evento-detalle");
+    fechaEvento.innerHTML = `
+        <i class="fas fa-calendar-alt"></i>
+        <p><strong>Fecha:</strong> ${fecha}</p>
+    `;
+
+    // Hora del evento (con ícono)
+    const horaEvento = document.createElement("div");
+    horaEvento.classList.add("evento-detalle");
+    horaEvento.innerHTML = `
+        <i class="fas fa-clock"></i>
+        <p><strong>Hora:</strong> ${hora}</p>
+    `;
+
+    // Locación del evento (con ícono)
+        const locacionEvento = document.createElement("div");
+        locacionEvento.classList.add("evento-detalle");
+        locacionEvento.innerHTML = `
+            <i class="fas fa-map-marker-alt"></i>
+            <p><strong>Locación:</strong> ${locacion}</p>
+    `;
+
+    // Botones de editar y eliminar (solo visibles para el administrador)
+    const accionesEvento = document.createElement("div");
+    accionesEvento.classList.add("acciones-evento");
+    accionesEvento.style.display = "none"; // Ocultar por defecto
+    accionesEvento.innerHTML = `
+        <button class="editar-evento" onclick="editarEvento(this)">Editar</button>
+        <button class="eliminar-evento" onclick="eliminarEvento(this)">Eliminar</button>
+    `;
+
+    // Añadir todo al contenedor de información
+    eventoInfo.appendChild(tituloEvento);
+    eventoInfo.appendChild(fechaEvento);
+    eventoInfo.appendChild(horaEvento);
+    eventoInfo.appendChild(locacionEvento);
+
+    // Añadir el flyer y la información a la tarjeta
+    eventoCard.appendChild(flyerImg);
+    eventoCard.appendChild(eventoInfo);
+
+    // Añadir la tarjeta al contenedor de eventos
+    const contenedorEventos = document.getElementById("contenedor-eventos");
+    contenedorEventos.appendChild(eventoCard);
+
+    // Mostrar los botones de editar y eliminar si el administrador ha iniciado sesión
+    const sesionActiva = localStorage.getItem("sesionActiva");
+    if (sesionActiva === "true") {
+        accionesEvento.style.display = "block";
+    }
+
+    // Asignar la función de abrir modal a la nueva tarjeta
+    eventoCard.addEventListener("click", function () {
+        abrirModal(flyer); // Abre el modal con el flyer
+    });
+
+    // Limpiar el formulario
+    document.getElementById("formulario-evento").reset();
+}
+
+// Asignar la función al formulario
+document.getElementById("formulario-evento").addEventListener("submit", añadirEvento);
+
+
+// Función para abrir el modal con el flyer
+function abrirModal(flyerUrl) {
+    const modal = document.getElementById("modal-flyer");
+    const flyerGrande = document.getElementById("flyer-grande");
+    flyerGrande.src = flyerUrl; // Asigna la URL del flyer al modal
+    modal.style.display = "block"; // Muestra el modal
+}
+
+// Función para cerrar el modal
+function cerrarModal() {
+    const modal = document.getElementById("modal-flyer");
+    modal.style.display = "none"; // Oculta el modal
+}
+
+// Asignar la función de abrir modal a las tarjetas de eventos
+document.addEventListener("DOMContentLoaded", function () {
+    const tarjetasEventos = document.querySelectorAll(".evento-card");
+
+    tarjetasEventos.forEach(tarjeta => {
+        tarjeta.addEventListener("click", function () {
+            const flyerUrl = tarjeta.querySelector(".evento-flyer").src; // Obtiene la URL del flyer
+            abrirModal(flyerUrl); // Abre el modal con el flyer
+
+        });
+    });
+});
+
+// Asignar la función al formulario
+document.getElementById("formulario-evento").addEventListener("submit", añadirEvento);
+// Asignar la función de cerrar modal al botón de cerrar
+document.querySelector(".cerrar").addEventListener("click", cerrarModal);
+
+// Cerrar el modal al hacer clic fuera de la imagen
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("modal-flyer");
+    if (event.target === modal) {
+        cerrarModal();
+    }
+});
+
+    </script>
+</body>
+</html>
