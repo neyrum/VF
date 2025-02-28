@@ -85,12 +85,14 @@
             max-width: 300px;
             margin: 20px auto;
             text-align: center;
+            border: 1px solid #ccc; /* Borde sutil */
         }
 
         #login-form label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
+            color: #333; /* Color de texto más oscuro */
         }
 
         #login-form input {
@@ -99,20 +101,32 @@
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Asegurar que el padding no afecte el ancho */
         }
 
-        #login-form button {
-            background-color: #333;
-            color: #fff;
+         /* Estilos para el botón de inicio de sesión */
+         #login-form button {
+            width: 100%;
+            background-color: var(--color-primario); /* Usar el color primario */
+            color: var(--color-secundario); /* Usar el color secundario */
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         #login-form button:hover {
             background-color: #555;
+        }
+
+        /* Estilos para el mensaje de error */
+        #error-message {
+            color: red;
+            display: none;
+            margin-top: 10px;
         }
 
 /* Contenedor del botón oculto */
@@ -872,7 +886,7 @@
     <div id="login-container">
     <div id="login-hidden-container">
         <button id="btn-login-hidden" class="login-icon">
-            <i class="fas fa-sign-in-alt"></i> 
+            <i class="fas fa-sign-in-alt"></i>
         </button>
     </div>
 
