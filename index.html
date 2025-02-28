@@ -33,29 +33,48 @@
   }
 
     header {
-      background-color: var(--color-primario);
-      color: var(--color-secundario);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url('https://i.ibb.co/mFMk3J0X/banner-logo.png');
+      background-size: cover; /* Ajusta la imagen al tamaño del header */
+      background-position: center; /* Centra la imagen de fondo */
+      color: var(--color-secundario); /* Color del texto */
       padding: 20px;
       text-align: center;
-}
+      position: relative; /* Para posicionar elementos hijos */
+      overflow: hidden; /* Evita que el fondo se desborde */
+  }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
+  /* Estilos para el título */
+  header h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+  }
+
+  /* Estilos para la navegación */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los elementos del menú */
+  }
 
         nav li {
             margin: 0 15px;
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+  nav a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: var(--color-whatsapp); /* Cambia el color al pasar el mouse */
+}
 
         section {
             padding: 20px;
@@ -221,6 +240,15 @@
 
         #musica, #video, #eventos, #contacto {
             text-align: center;
+        }
+
+        /* Contenedor del logo */
+        .logo-container {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el logo */
+            padding: 10px;
+            border-radius: 50%; /* Hace que el contenedor sea circular */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra suave */
         }
 
         .logo {
