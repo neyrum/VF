@@ -636,9 +636,11 @@
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: transparent;
+    color: var(--color-primario);
+    transition: color 0.3s ease;
 }
 
 .editar-evento {
@@ -901,11 +903,6 @@
     </form>
 </section>
 
-    <!-- Contenedor de eventos -->
-    <div class="contenedor-eventos" id="contenedor-eventos"></div>
-
-
-
          <section id="contacto">
             <h2>Contacto</h2>
             <p>¡Contáctame para eventos, colaboraciones o cualquier consulta!</p>
@@ -983,8 +980,8 @@
             return usuario === credenciales.usuario && contraseña === credenciales.contraseña;
         }
 
-       // Función para iniciar sesión
-function iniciarSesion(usuario) {
+     // Función para iniciar sesión
+     function iniciarSesion(usuario) {
     // Guardar el estado de la sesión en localStorage
     localStorage.setItem("sesionActiva", "true");
     localStorage.setItem("usuario", usuario);
@@ -1003,7 +1000,7 @@ function iniciarSesion(usuario) {
 
     // Mostrar los botones de editar y eliminar en todos los eventos
     const accionesEventos = document.querySelectorAll(".acciones-evento");
-    accionesEventos.forEach(accion => accion.style.display = "block");
+    accionesEventos.forEach(accion => accion.style.display = "flex");
 
     // Mostrar mensaje de bienvenida
     alert(`Bienvenido, ${usuario}!`);
@@ -1024,7 +1021,7 @@ function cerrarSesion() {
     // Mostrar el botón de inicio de sesión oculto
     document.getElementById("login-hidden-container").style.display = "block";
 
-     // Ocultar los botones de editar y eliminar en todos los eventos
+    // Ocultar los botones de editar y eliminar en todos los eventos
     const accionesEventos = document.querySelectorAll(".acciones-evento");
     accionesEventos.forEach(accion => accion.style.display = "none");
 
@@ -1032,14 +1029,14 @@ function cerrarSesion() {
     alert("Has cerrado sesión correctamente.");
 }
 
-            // Verificar si el usuario ya está autenticado al cargar la página
-        document.addEventListener("DOMContentLoaded", function () {
+    // Verificar si el usuario ya está autenticado al cargar la página
+    document.addEventListener("DOMContentLoaded", function () {
     const sesionActiva = localStorage.getItem("sesionActiva");
 
     if (sesionActiva === "true") {
         const usuario = localStorage.getItem("usuario");
-        iniciarSesion(usuario); // Mostrar la sección "Añadir Evento"
-        iniciarSesion(usuario); // Mostrar botones de editar y eliminar
+        iniciarSesion(usuario);
+
     } else {
         // Ocultar la sección "Añadir Evento" si no hay sesión activa
         document.getElementById("añadir-evento").style.display = "none";
@@ -1206,15 +1203,18 @@ function añadirEvento(event) {
     const hora = document.getElementById("hora").value.trim();
     const locacion = document.getElementById("locacion").value.trim();
     const flyer = document.getElementById("flyer").value.trim();
-    if (!validarURL(flyer)) {
-        alert("Por favor, ingresa una URL válida de imagen (JPEG, JPG, GIF, PNG).");
-        return;
-    }
 
-    if (!titulo || !fecha || !hora || !locacion || !flyer) {
-        alert("Por favor, completa todos los campos.");
-        return;
-    }
+    // Validar que todos los campos estén completos
+   if (!titulo || !fecha || !hora || !locacion || !flyer) {
+       alert("Por favor, completa todos los campos.");
+       return;
+   }
+
+   // Validar que la URL del flyer sea válida
+   if (!validarURL(flyer)) {
+       alert("Por favor, ingresa una URL válida de imagen (JPEG, JPG, GIF, PNG).");
+       return;
+   }
 
     // Crear la tarjeta del evento
     const eventoCard = document.createElement("div");
@@ -1235,36 +1235,35 @@ function añadirEvento(event) {
     tituloEvento.textContent = titulo;
 
     // Fecha del evento (con ícono)
-    const fechaEvento = document.createElement("div");
-    fechaEvento.classList.add("evento-detalle");
-    fechaEvento.innerHTML = `
-        <i class="fas fa-calendar-alt"></i>
-        <p><strong>Fecha:</strong> ${fecha}</p>
-    `;
+   const fechaEvento = document.createElement("div");
+   fechaEvento.classList.add("evento-detalle");
+   fechaEvento.innerHTML = `
+       <i class="fas fa-calendar-alt"></i>
+       <p><strong>Fecha:</strong> ${fecha}</p>
+   `;
 
-    // Hora del evento (con ícono)
-    const horaEvento = document.createElement("div");
-    horaEvento.classList.add("evento-detalle");
-    horaEvento.innerHTML = `
-        <i class="fas fa-clock"></i>
-        <p><strong>Hora:</strong> ${hora}</p>
-    `;
+   // Hora del evento (con ícono)
+   const horaEvento = document.createElement("div");
+   horaEvento.classList.add("evento-detalle");
+   horaEvento.innerHTML = `
+       <i class="fas fa-clock"></i>
+       <p><strong>Hora:</strong> ${hora}</p>
+   `;
 
-    // Locación del evento (con ícono)
-        const locacionEvento = document.createElement("div");
-        locacionEvento.classList.add("evento-detalle");
-        locacionEvento.innerHTML = `
-            <i class="fas fa-map-marker-alt"></i>
-            <p><strong>Locación:</strong> ${locacion}</p>
-    `;
+   // Locación del evento (con ícono)
+   const locacionEvento = document.createElement("div");
+   locacionEvento.classList.add("evento-detalle");
+   locacionEvento.innerHTML = `
+       <i class="fas fa-map-marker-alt"></i>
+       <p><strong>Locación:</strong> ${locacion}</p>
+   `;
 
     // Botones de editar y eliminar (solo visibles para el administrador)
     const accionesEvento = document.createElement("div");
     accionesEvento.classList.add("acciones-evento");
-    accionesEvento.style.display = "none"; // Ocultar por defecto
     accionesEvento.innerHTML = `
-        <button class="editar-evento" onclick="editarEvento(this)">Editar</button>
-        <button class="eliminar-evento" onclick="eliminarEvento(this)">Eliminar</button>
+        <button class="editar-evento" onclick="editarEvento(this)"><i class="fas fa-edit"></i></button>
+        <button class="eliminar-evento" onclick="eliminarEvento(this)"><i class="fas fa-trash-alt"></i></button>
     `;
 
     // Añadir todo al contenedor de información
@@ -1282,10 +1281,12 @@ function añadirEvento(event) {
     const contenedorEventos = document.getElementById("contenedor-eventos");
     contenedorEventos.appendChild(eventoCard);
 
-    // Ocultar los botones si el administrador no ha iniciado sesión
+    // Verificar si el usuario está autenticado
     const sesionActiva = localStorage.getItem("sesionActiva");
-    if (sesionActiva !== "true") {
-        accionesEvento.style.display = "none";
+    if (sesionActiva === "true") {
+        accionesEvento.style.display = "flex"; // Mostrar los botones
+    } else {
+        accionesEvento.style.display = "none"; // Ocultar los botones
     }
 
     // Asignar la función de abrir modal a la nueva tarjeta
