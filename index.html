@@ -849,33 +849,10 @@
         <section id="eventos">
     <h2>Eventos</h2>
     <p>Próximos conciertos y presentaciones.</p>
-    <div class="contenedor-eventos" id="contenedor-eventos">
+    <div class="contenedor-eventos" id="contenedor-eventos"></div>
         <!-- Los eventos se añadirán aquí dinámicamente -->
-        <div class="evento-card">
-            <img src="https://i.ibb.co/FbT3ND0g/images.jpg" alt="Flyer del evento 1" class="evento-flyer">
-            <div class="evento-info">
-       <h3>Concierto en La Habana</h3>
-       <div class="evento-detalle">
-           <i class="fas fa-calendar-alt"></i>
-           <p><strong>Fecha:</strong> 25 de Octubre, 2023</p>
-       </div>
-       <div class="evento-detalle">
-           <i class="fas fa-clock"></i>
-           <p><strong>Hora:</strong> 19:00</p>
-       </div>
-       <div class="evento-detalle">
-           <i class="fas fa-map-marker-alt"></i>
-           <p><strong>Locación:</strong> Teatro Nacional, La Habana, Cuba</p>
 
-        <!-- Botones de editar y eliminar (solo visibles para el administrador) -->
-        <div class="acciones-evento" style="display: none;">
-            <button class="editar-evento" onclick="editarEvento(this)">
-            <i class="fas fa-edit"></i>
-            </button>
-            <button class="eliminar-evento" onclick="eliminarEvento(this)">
-            <i class="fas fa-trash-alt"></i>
-            </button>
-        </div>
+
     </div>
 </div>
 </section>
@@ -1188,10 +1165,16 @@ function editarEvento(botonEditar) {
     // Función para eliminar un evento
     function eliminarEvento(botonEliminar) {
         const eventoCard = botonEliminar.closest(".evento-card");
+        const titulo = eventoCard.querySelector("h3").textContent;
+
         if (confirm("¿Estás seguro de que quieres eliminar este evento?")) {
             eventoCard.remove(); // Eliminar la tarjeta del evento
-        }
+    // Eliminar el evento de localStorage
+        const eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+        const nuevosEventos = eventos.filter(evento => evento.titulo !== titulo);
+        localStorage.setItem("eventos", JSON.stringify(nuevosEventos));
     }
+}
 
 // Función para añadir un evento
 function añadirEvento(event) {
@@ -1216,14 +1199,42 @@ function añadirEvento(event) {
        return;
    }
 
+   // Crear un objeto con la información del evento
+    const nuevoEvento = {
+        titulo,
+        fecha,
+        hora,
+        locacion,
+        flyer,
+    };
+
+    // Obtener los eventos guardados en localStorage
+    let eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+
+    // Añadir el nuevo evento al array
+    eventos.push(nuevoEvento);
+
+    // Guardar el array actualizado en localStorage
+    localStorage.setItem("eventos", JSON.stringify(eventos));
+
+    // Mostrar el evento en la página
+    mostrarEvento(nuevoEvento);
+
+    // Limpiar el formulario
+   document.getElementById("formulario-evento").reset();
+  }
+
+    //Función reutilizable para mostrar un evento en la página
+    function mostrarEvento(evento) {
+
     // Crear la tarjeta del evento
     const eventoCard = document.createElement("div");
     eventoCard.classList.add("evento-card");
 
     // Flyer del evento
     const flyerImg = document.createElement("img");
-    flyerImg.src = flyer;
-    flyerImg.alt = `Flyer del evento: ${titulo}`;
+    flyerImg.src = evento.flyer;
+    flyerImg.alt = `Flyer del evento: ${evento.titulo}`;
     flyerImg.classList.add("evento-flyer");
 
     // Información del evento
@@ -1232,38 +1243,42 @@ function añadirEvento(event) {
 
     // Título del evento
     const tituloEvento = document.createElement("h3");
-    tituloEvento.textContent = titulo;
+    tituloEvento.textContent = evento.titulo;
 
     // Fecha del evento (con ícono)
-   const fechaEvento = document.createElement("div");
-   fechaEvento.classList.add("evento-detalle");
-   fechaEvento.innerHTML = `
-       <i class="fas fa-calendar-alt"></i>
-       <p><strong>Fecha:</strong> ${fecha}</p>
-   `;
+    const fechaEvento = document.createElement("div");
+    fechaEvento.classList.add("evento-detalle");
+    fechaEvento.innerHTML = `
+        <i class="fas fa-calendar-alt"></i>
+        <p><strong>Fecha:</strong> ${evento.fecha}</p>
+    `;
 
    // Hora del evento (con ícono)
    const horaEvento = document.createElement("div");
-   horaEvento.classList.add("evento-detalle");
-   horaEvento.innerHTML = `
-       <i class="fas fa-clock"></i>
-       <p><strong>Hora:</strong> ${hora}</p>
-   `;
+    horaEvento.classList.add("evento-detalle");
+    horaEvento.innerHTML = `
+        <i class="fas fa-clock"></i>
+        <p><strong>Hora:</strong> ${evento.hora}</p>
+    `;
 
    // Locación del evento (con ícono)
    const locacionEvento = document.createElement("div");
-   locacionEvento.classList.add("evento-detalle");
-   locacionEvento.innerHTML = `
-       <i class="fas fa-map-marker-alt"></i>
-       <p><strong>Locación:</strong> ${locacion}</p>
-   `;
+    locacionEvento.classList.add("evento-detalle");
+    locacionEvento.innerHTML = `
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Locación:</strong> ${evento.locacion}</p>
+    `;
 
     // Botones de editar y eliminar (solo visibles para el administrador)
     const accionesEvento = document.createElement("div");
     accionesEvento.classList.add("acciones-evento");
     accionesEvento.innerHTML = `
-        <button class="editar-evento" onclick="editarEvento(this)"><i class="fas fa-edit"></i></button>
-        <button class="eliminar-evento" onclick="eliminarEvento(this)"><i class="fas fa-trash-alt"></i></button>
+        <button class="editar-evento" onclick="editarEvento(this)">
+            <i class="fas fa-edit"></i> <!-- Ícono de editar -->
+        </button>
+        <button class="eliminar-evento" onclick="eliminarEvento(this)">
+            <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+        </button>
     `;
 
     // Añadir todo al contenedor de información
@@ -1301,6 +1316,17 @@ function añadirEvento(event) {
 // Asignar la función al formulario
 document.getElementById("formulario-evento").addEventListener("submit", añadirEvento);
 
+// Función para cargar y mostrar los eventos guardados
+function cargarEventos() {
+    // Obtener los eventos guardados en localStorage
+    const eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+
+    // Mostrar cada evento en la página
+    eventos.forEach(evento => mostrarEvento(evento));
+}
+
+// Llamar a la función al cargar la página
+document.addEventListener("DOMContentLoaded", cargarEventos);
 
 // Función para abrir el modal con el flyer
 function abrirModal(flyerUrl) {
