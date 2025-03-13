@@ -1019,8 +1019,8 @@ nav ul::-webkit-scrollbar-thumb:hover {
 
  // Inicializar Supabase (reemplaza con tus credenciales)
  const supabaseUrl = 'https://pdmoyodriynqctayzpdu.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkbW95b2RyaXlucWN0YXl6cGR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEwMjU5NjIsImV4cCI6MjA1NjYwMTk2Mn0.DVlugQUX0QLz1WFwlqgbyfkpVxytm9xlYsIcM3-kRew';
-        const supabase = supabase.createClient(supabaseUrl, supabaseKey);      
+ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkbW95b2RyaXlucWN0YXl6cGR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEwMjU5NjIsImV4cCI6MjA1NjYwMTk2Mn0.DVlugQUX0QLz1WFwlqgbyfkpVxytm9xlYsIcM3-kRew';
+ const supabase = supabase.createClient(supabaseUrl, supabaseKey);      
 
 // Galería de fotos
 const imagenes = [
@@ -1048,21 +1048,15 @@ const imagenes = [
         const modal = document.getElementById("modal-galeria");
         if (modal) {
             modal.style.display = "none";
-        }
     }
 
     function cambiarFoto(direccion) {
-        indiceActual += direccion;
-        if (indiceActual >= imagenes.length) {
-            indiceActual = 0;
-        } else if (indiceActual < 0) {
-            indiceActual = imagenes.length - 1;
+            indiceActual += direccion;
+            if (indiceActual >= imagenes.length) indiceActual = 0;
+            else if (indiceActual < 0) indiceActual = imagenes.length - 1;
+            const imagenModal = document.getElementById("imagen-modal");
+            if (imagenModal) imagenModal.src = imagenes[indiceActual];
         }
-        const imagenModal = document.getElementById("imagen-modal");
-        if (imagenModal) {
-            imagenModal.src = imagenes[indiceActual];
-        }
-    }
 
     window.addEventListener("click", (event) => {
         const modal = document.getElementById("modal-galeria");
@@ -1070,6 +1064,9 @@ const imagenes = [
             cerrarGaleria();
         }
     });
+
+    // Ejecutar todo después de que el DOM esté cargado
+    document.addEventListener("DOMContentLoaded", () => {
 
      // Botón "Volver arriba"
      document.addEventListener("DOMContentLoaded", function() {
