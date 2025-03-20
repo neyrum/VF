@@ -9,20 +9,21 @@
     <title>VARON DE FE - Rap Cristiano</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <style>
-        :root {
-            --color-primario: #333;
-            --color-secundario: #fff;
-            --color-whatsapp: #25D366;
-            --color-facebook: #1877F2;
-            --color-instagram: #E4405F;
-            --color-youtube: #FF0000;
-            --color-tiktok: #000000;
-            --color-spotify: #1DB954;
-        }
+<style>
+   :root {
+    --color-primario: #333;
+    --color-secundario: #fff;
+    --color-whatsapp: #25D366;
+    --color-facebook: #1877F2;
+    --color-instagram: #E4405F;
+    --color-youtube: #FF0000;
+    --color-tiktok: #000000;
+    --color-spotify: #1DB954;
+}
 
-        /* Estilos generales */
+    /* Estilos generales */
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -825,6 +826,8 @@ nav ul::-webkit-scrollbar-thumb:hover {
     </style>
 </head>
 <body>
+  <!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <header>
         <div class="logo-container">
             <img src="https://i.ibb.co/Kz3KMnfq/photo-5039893652704440247-y.jpg" alt="Logotipo de VARON DE FE" class="logo">
@@ -832,8 +835,10 @@ nav ul::-webkit-scrollbar-thumb:hover {
         <h1>VARON DE FE</h1>
 
         <!-- Ícono de hamburguesa -->
-        <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i></div>
-       
+        <div class="menu-icon" id="menu-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+
         <!-- Menú de navegación -->
         <nav id="nav-menu">
             <ul>
@@ -849,22 +854,24 @@ nav ul::-webkit-scrollbar-thumb:hover {
     </header>
 
     <main>
-        <!-- Sección Inicio -->
         <section id="inicio">
             <h2>Bienvenido a mi página web</h2>
             <p>Soy VARON DE FE, Ministro Urbano cristiano comprometido con llevar un mensaje de fe y esperanza a través de la música.</p>
         </section>
 
-        <!-- Sección Bibliografía -->
         <section id="biografia">
             <h2>Biografía</h2>
             <p>Inicié mi camino en el rap en 1997...</p>
             <div class="contenido-resumido">
-                <p>Yovani Sánchez Noa inició su carrera en el rap en 1997, como parte de un grupo de amigos del barrio. En 1999, su primo lo invitó a la Iglesia Católica, donde descubrió una nueva forma de vivir y decidió dejar el grupo para crear su propio proyecto musical.</p>
+                <p>
+                    Yovani Sánchez Noa inició su carrera en el rap en 1997, como parte de un grupo de amigos del barrio. En 1999, su primo lo invitó a la Iglesia Católica, donde descubrió una nueva forma de vivir y decidió dejar el grupo para crear su propio proyecto musical.
+                </p>
                 <p class="leer-mas">Leer más...</p>
             </div>
             <div class="contenido-completo">
-                <p>En ese tiempo, Yovani formó el primer grupo de Rap Católico en Cuba. Inicialmente eran tres integrantes, pero luego decidió continuar como solista acompañado de una corista. Juntos, participaron en varios festivales y conciertos a nivel nacional, llevando un mensaje de fe a través de su música.</p>
+                <p>
+                    En ese tiempo, Yovani formó el primer grupo de Rap Católico en Cuba. Inicialmente eran tres integrantes, pero luego decidió continuar como solista acompañado de una corista. Juntos, participaron en varios festivales y conciertos a nivel nacional, llevando un mensaje de fe a través de su música.
+                </p>
                 <p>
                     En 2006, tuvo un reencuentro profundo e íntimo con Dios en una congregación cristiana. A partir de ese momento, decidió bautizarse y se convirtió en miembro de la congregación. Durante ese período, recibió una oferta para crear la banda sonora de una telenovela que se transmitiría en la televisión cubana con un contrato oficial. Sin embargo, rechazó esta oportunidad para seguir su camino en Cristo, utilizando sus talentos solo para glorificar a Dios.
                 </p>
@@ -877,480 +884,713 @@ nav ul::-webkit-scrollbar-thumb:hover {
                 <p class="leer-menos">Leer menos...</p>
             </div>
         </section>
-        
-        <!-- Sección Musica -->
+
         <section id="musica">
-            <h2>Música</h2>
-            <div class="plataformas-musica">
-                <a href="https://indfy.me/varon-de-fe-63c1e61931d1ed6cd334dbe6" class="plataforma-button spotify" target="_blank"><i class="fas fa-music"></i> Esencia</a>
-                <a href="https://indfy.me/varon-de-fe-metralla" class="plataforma-button apple-music" target="_blank"><i class="fas fa-music"></i> Metralla</a>
-                <a href="https://indfy.me/varon-de-fe-estoy-de-pie" class="plataforma-button youtube-music" target="_blank"><i class="fas fa-music"></i> Estoy de Pie</a>
-                <a href="https://indfy.me/muchos-quieren" class="plataforma-button amazon-music" target="_blank"><i class="fas fa-music"></i> MUCHOS QUIEREN</a>
-            </div>
-        </section>
+    <h2>Música</h2>
+    <p>Escucha mis canciones en las siguientes plataformas:</p>
+    <div class="plataformas-musica">
+        <!-- Esencia -->
+        <a href="https://indfy.me/varon-de-fe-63c1e61931d1ed6cd334dbe6" class="plataforma-button spotify" target="_blank">
+            <i class="fas fa-music"></i> Esencia
+        </a>
+        <!-- Metralla -->
+        <a href="https://indfy.me/varon-de-fe-metralla" class="plataforma-button apple-music" target="_blank">
+            <i class="fas fa-music"></i> Metralla
+        </a>
+        <!-- Estoy de Pie -->
+        <a href="https://indfy.me/varon-de-fe-estoy-de-pie" class="plataforma-button youtube-music" target="_blank">
+            <i class="fas fa-music"></i> Estoy de Pie
+        </a>
+        <!-- MUCHOS QUIEREN -->
+        <a href="https://indfy.me/muchos-quieren" class="plataforma-button amazon-music" target="_blank">
+            <i class="fas fa-music"></i> MUCHOS QUIEREN
+        </a>
+    </div>
+</section>
 
-        <!-- Sección Fotos -->
         <section id="fotos">
-            <h2>Fotos</h2>
-            <p>Imágenes de Estudio/Osmin Costa.</p>
-            <div class="galeria-fotos">
-                <div class="foto-item" onclick="abrirGaleria(0)"><img src="https://i.ibb.co/ZRFQ9kgz/photo-5039893652704440272-y.jpg" alt="Foto 1"></div>
-                <div class="foto-item" onclick="abrirGaleria(1)"><img src="https://i.ibb.co/LX8H4Rwp/photo-5039893652704440273-y.jpg" alt="Foto 2"></div>
-                <div class="foto-item" onclick="abrirGaleria(2)"><img src="https://i.ibb.co/F4mjFTqX/photo-5039893652704440271-y.jpg" alt="Foto 3"></div>
-                <div class="foto-item" onclick="abrirGaleria(3)"><img src="https://i.ibb.co/4R3RGc9b/photo-5039893652704440270-y.jpg" alt="Foto 4"></div>
-                <div class="foto-item" onclick="abrirGaleria(4)"><img src="https://i.ibb.co/FqbTV63M/photo-5039893652704440269-y.jpg" alt="Foto 5"></div>
-            </div>
-        </section>
-
-        <!-- Modal de la Galería -->
-        <div id="modal-galeria" class="modal">
-            <span class="cerrar" onclick="cerrarGaleria()">×</span>
-            <span class="anterior" onclick="cambiarFoto(-1)">❮</span>
-            <span class="siguiente" onclick="cambiarFoto(1)">❯</span>
-            <img id="imagen-modal" class="imagen-modal">
+    <h2>Fotos</h2>
+    <p>Imágenes de Estudio/Osmin Costa.</p>
+    <div class="galeria-fotos">
+        <!-- Foto 1 -->
+        <div class="foto-item" onclick="abrirGaleria(0)">
+            <img src="https://i.ibb.co/ZRFQ9kgz/photo-5039893652704440272-y.jpg" alt="Descripción de la foto 1">
         </div>
-        
-        <!-- Sección Videos -->
+        <!-- Foto 2 -->
+        <div class="foto-item" onclick="abrirGaleria(1)">
+            <img src="https://i.ibb.co/LX8H4Rwp/photo-5039893652704440273-y.jpg" alt="Descripción de la foto 2">
+        </div>
+        <!-- Foto 3 -->
+        <div class="foto-item" onclick="abrirGaleria(2)">
+            <img src="https://i.ibb.co/F4mjFTqX/photo-5039893652704440271-y.jpg" alt="Descripción de la foto 3">
+        </div>
+        <!-- Foto 4 -->
+        <div class="foto-item" onclick="abrirGaleria(3)">
+            <img src="https://i.ibb.co/4R3RGc9b/photo-5039893652704440270-y.jpg" alt="Descripción de la foto 4">
+        </div>
+        <!-- Foto 5 -->
+        <div class="foto-item" onclick="abrirGaleria(4)">
+            <img src="https://i.ibb.co/FqbTV63M/photo-5039893652704440269-y.jpg" alt="Descripción de la foto 5">
+        </div>
+      </div>
+</section>
+
+<!-- Modal de la galería -->
+<div id="modal-galeria" class="modal">
+    <span class="cerrar" onclick="cerrarGaleria()">&times;</span>
+    <span class="anterior" onclick="cambiarFoto(-1)">&#10094;</span>
+    <span class="siguiente" onclick="cambiarFoto(1)">&#10095;</span>
+    <img id="imagen-modal" class="imagen-modal">
+</div>
+
         <section id="video">
             <h2>Video</h2>
             <p>Mira algunos de mis videos musicales.</p>
             <div class="video-container">
+                <!-- Video 1 -->
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/_Ow2ys6EDRI" title="Estoy de Pie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/_Ow2ys6EDRI"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                <!-- Video 2 -->
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/4bKskGpetkA" title="Metralla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/4bKskGpetkA"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                <!-- Video 3 -->
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/7vpMZFoba_0" title="Muchos Quieren" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/7vpMZFoba_0"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                <!-- Video 4 -->
                 <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/K_zCxpMDKso" title="Esencia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/K_zCxpMDKso"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                <!-- Añade más videos si es necesario -->
             </div>
         </section>
 
-        <!-- Sección Eventos -->
-        <section id="eventos">
-            <h2>Eventos</h2>
-            <div id="añadir-evento" style="display: none;">
-                <h3>Añadir Nuevo Evento</h3>
-                <form id="formulario-evento">
-                    <label for="titulo">Título:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                    <label for="hora">Hora:</label>
-                    <input type="text" id="hora" name="hora" required>
-                    <label for="locacion">Locación:</label>
-                    <input type="text" id="locacion" name="locacion" required>
-                    <label for="flyer">URL del Flyer:</label>
-                    <input type="url" id="flyer" name="flyer" required>
-                    <button type="submit">Añadir Evento</button>
-                </form>
-            </div>
-            <div id="contenedor-eventos" class="contenedor-eventos"></div>
-        </section>
-
+        <!-- Modal para mostrar el flyer -->
         <div id="modal-flyer" class="modal">
-            <span class="cerrar" onclick="cerrarModal()">&times;</span>
-            <img id="flyer-grande" class="flyer-grande">
+           <span class="cerrar" onclick="cerrarModal()">&times;</span>
+           <img id="flyer-grande" class="flyer-grande">
         </div>
 
-        <!-- Contacto -->
-        <section id="contacto">
+        <section id="eventos">
+    <h2>Eventos</h2>
+    <p>Próximos conciertos y presentaciones.</p>
+    <div class="contenedor-eventos" id="contenedor-eventos"></div>
+        <!-- Los eventos se añadirán aquí dinámicamente -->
+
+
+    </div>
+</div>
+</section>
+
+<!-- Sección Añadir Evento (oculta por defecto) -->
+<section id="añadir-evento" style="display: none;">
+    <h2>Añadir Nuevo Evento</h2>
+    <form id="formulario-evento">
+        <label for="titulo">Título del Evento:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <input type="text" id="hora" name="hora" placeholder="Selecciona la hora" required>
+
+        <label for="locacion">Locación:</label>
+        <input type="text" id="locacion" name="locacion" required>
+
+        <label for="flyer">URL del Flyer:</label>
+        <input type="url" id="flyer" name="flyer" required>
+
+        <button type="submit" aria-label="Añadir evento">Añadir Evento</button>
+    </form>
+</section>
+
+         <!-- Contacto -->
+         <section id="contacto">
             <h2>Contacto</h2>
             <p>¡Contáctame para eventos, colaboraciones o cualquier consulta!</p>
-            <a href="https://wa.me/5356959395?text=Hola%20VARON%20DE%20FE,%20me%20interesa%20contactarte%20para..." class="whatsapp-button" target="_blank">Enviar mensaje por WhatsApp</a>
-            
+            <p>
+                <a href="https://wa.me/5356959395?text=Hola%20VARON%20DE%20FE,%20me%20interesa%20contactarte%20para..." target="_blank" class="whatsapp-button">
+                    Enviar mensaje por WhatsApp
+                </a>
+            </p>
+
             <!-- Redes Sociales -->
             <div class="redes-sociales">
-                <a href="https://www.facebook.com/@VARONDEFEOFICIALMUSIC" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/varondefeoficialmusic?igsh=YjFqMDJjM2lzZG9u" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@varondefeOficialmusic" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@tu_perfil" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://open.spotify.com/user/31443cov5ur2kwiy7n54uo2uevaq?si=RdcuWbN8Rbu1j0jQVbrrJw" class="spotify" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.facebook.com/@VARONDEFEOFICIALMUSIC" class="facebook" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/varondefeoficialmusic?igsh=YjFqMDJjM2lzZG9u" class="instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@varondefeOficialmusic" class="youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@tu_perfil" class="tiktok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://open.spotify.com/user/31443cov5ur2kwiy7n54uo2uevaq?si=RdcuWbN8Rbu1j0jQVbrrJw" class="spotify" target="_blank">
+                    <i class="fab fa-spotify"></i>
+                </a>
             </div>
 
-             <!-- Botón de donación de PayPal -->
-            <div class="donacion">
+            <!-- Botón de donación de PayPal -->
                 <h2>¡Apoya mi música!</h2>
-                <p>Si te gusta mi trabajo y ministerio, puedes apoyarme con una donación. ¡Gracias!:</p>
-                <form action="https://www.paypal.com/donate" method="post" target="_top">
-                    <input type="hidden" name="business" value="syovani136@gmail.com">
-                    <input type="hidden" name="currency_code" value="USD">
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Donar con PayPal">
-                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                </form>
-                <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal">
-            </div>
-        </section>
+                <p>Si te gusta mi trabajo, puedes apoyarme con una donación. ¡Gracias!</p>
+                  <form action="https://www.paypal.com/donate" method="post" target="_top">
+                  <input type="hidden" name="business" value="syovani136@gmail.com">
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="Donar con PayPal">
+                  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+          </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 VARON DE FE OFICIAL MUSIC </p>
+        <p>&copy; 2025 VARON DE FE OFICIAL MUSIC</p>
     </footer>
 
-    <div id="login-form" style="display: none;">
-        <form id="form-login">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Iniciar Sesión</button>
-        </form>
-        <p id="error-message">Usuario o contraseña incorrectos.</p>
-    </div>
-
+     <!-- Nuevo contenedor para el botón oculto -->
+    <div id="login-container">
     <div id="login-hidden-container">
         <button id="btn-login-hidden" class="login-icon">
-        <i class="fas fa-sign-in-alt"></i></button>
+            <i class="fas fa-sign-in-alt"></i>
+        </button>
     </div>
-    <button id="btn-logout" style="display: none;">Cerrar Sesión</button>
-    <button id="btn-subir"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Scripts -->
+    <!-- Botón de cerrar sesión (oculto por defecto) -->
+    <button id="btn-logout" class="logout-icon" style="display: none;">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+    </button>
+
+<!-- Formulario de inicio de sesión (oculto por defecto) -->
+    <div id="login-form" style="display: none;">
+        <h2>Iniciar Sesión</h2>
+        <form id="form-login">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario">
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+
+            <button type="submit">Iniciar Sesión</button>
+            <p id="error-message" style="color: red; display: none;">Credenciales incorrectas. Inténtalo de nuevo.</p>
+        </form>
+    </div>
+
+    <!-- Botón flotante -->
+    <button id="btn-subir" title="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+   <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="app.js" type="module"></script>
+    <script>
 
-<script>
+       
 
- // Inicializar Supabase (reemplaza con tus credenciales)
- const supabaseUrl = 'https://pdmoyodriynqctayzpdu.supabase.co';
- const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkbW95b2RyaXlucWN0YXl6cGR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEwMjU5NjIsImV4cCI6MjA1NjYwMTk2Mn0.DVlugQUX0QLz1WFwlqgbyfkpVxytm9xlYsIcM3-kRew';
- const supabase = supabase.createClient(supabaseUrl, supabaseKey);      
+       // JavaScript para el menú hamburguesa
+        document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const navMenu = document.getElementById("nav-menu").querySelector("ul");
 
-// Galería de fotos
-const imagenes = [
-        "https://i.ibb.co/ZRFQ9kgz/photo-5039893652704440272-y.jpg",
-        "https://i.ibb.co/LX8H4Rwp/photo-5039893652704440273-y.jpg",
-        "https://i.ibb.co/F4mjFTqX/photo-5039893652704440271-y.jpg",
-        "https://i.ibb.co/4R3RGc9b/photo-5039893652704440270-y.jpg",
-        "https://i.ibb.co/FqbTV63M/photo-5039893652704440269-y.jpg"
-    ];
-    let indiceActual = 0;
+    // Abrir/Cerrar menú
+    menuIcon.addEventListener("click", function(e) {
+        e.stopPropagation(); // Evitar cierre inmediato
+        navMenu.classList.toggle("active");
+    });
 
-    function abrirGaleria(indice) {
-        indiceActual = indice;
-        const modal = document.getElementById("modal-galeria");
-        const imagenModal = document.getElementById("imagen-modal");
-        if (modal && imagenModal) {
-            imagenModal.src = imagenes[indiceActual];
-            modal.style.display = "block";
-        } else {
-            console.error("Modal o imagen no encontrados en el DOM");
-        }
-    }
-
-    function cerrarGaleria() {
-        const modal = document.getElementById("modal-galeria");
-        if (modal) {
-            modal.style.display = "none";
-    }
-
-    function cambiarFoto(direccion) {
-            indiceActual += direccion;
-            if (indiceActual >= imagenes.length) indiceActual = 0;
-            else if (indiceActual < 0) indiceActual = imagenes.length - 1;
-            const imagenModal = document.getElementById("imagen-modal");
-            if (imagenModal) imagenModal.src = imagenes[indiceActual];
-        }
-
-    window.addEventListener("click", (event) => {
-        const modal = document.getElementById("modal-galeria");
-        if (event.target === modal) {
-            cerrarGaleria();
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", function(e) {
+        if (!navMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+            navMenu.classList.remove("active");
         }
     });
 
-    // Ejecutar todo después de que el DOM esté cargado
-    document.addEventListener("DOMContentLoaded", () => {
+    // Cerrar al seleccionar opción
+    document.querySelectorAll("#nav-menu ul li a").forEach(enlace => {
+        enlace.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        });
+    });
+});
 
-     // Botón "Volver arriba"
-     document.addEventListener("DOMContentLoaded", function() {
-            const btnSubir = document.getElementById("btn-subir");
-            window.addEventListener("scroll", () => {
-                btnSubir.style.display = window.scrollY > 300 ? "block" : "none";
-            });
-            btnSubir.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        document.addEventListener("DOMContentLoaded", function () {
+    const btnSubir = document.getElementById("btn-subir");
+
+    // Mostrar u ocultar el botón al hacer scroll
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+            btnSubir.style.display = "block"; // Mostrar botón
+        } else {
+            btnSubir.style.display = "none"; // Ocultar botón
+        }
+    });
+
+    // Desplazarse suavemente hacia arriba al hacer clic
+    btnSubir.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Desplazamiento suave
+        });
+    });
+});
+
+        // Función para mostrar el formulario de inicio de sesión
+        function mostrarLogin() {
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        // Función para validar credenciales
+        function validarCredenciales(usuario, contraseña) {
+            return usuario === credenciales.usuario && contraseña === credenciales.contraseña;
+        }
+
+     // Función para iniciar sesión
+     function iniciarSesion(usuario) {
+    // Guardar el estado de la sesión en localStorage
+    localStorage.setItem("sesionActiva", "true");
+    localStorage.setItem("usuario", usuario);
+
+    // Ocultar el formulario de inicio de sesión
+    document.getElementById("login-form").style.display = "none";
+
+    // Ocultar el botón de inicio de sesión oculto
+    document.getElementById("login-hidden-container").style.display = "none";
+
+    // Mostrar la sección "Añadir Eventos"
+    document.getElementById("añadir-evento").style.display = "block";
+
+    // Mostrar el botón de cerrar sesión
+    document.getElementById("btn-logout").style.display = "block";
+
+    // Mostrar los botones de editar y eliminar en todos los eventos
+    const accionesEventos = document.querySelectorAll(".acciones-evento");
+    accionesEventos.forEach(accion => accion.style.display = "flex");
+
+    // Mostrar mensaje de bienvenida
+    alert(`Bienvenido, ${usuario}!`);
+}
+
+// Función para cerrar sesión
+function cerrarSesion() {
+    // Eliminar el estado de la sesión de localStorage
+    localStorage.removeItem("sesionActiva");
+    localStorage.removeItem("usuario");
+
+    // Ocultar la sección "Añadir Eventos"
+    document.getElementById("añadir-evento").style.display = "none";
+
+    // Ocultar el botón de cerrar sesión
+    document.getElementById("btn-logout").style.display = "none";
+
+    // Mostrar el botón de inicio de sesión oculto
+    document.getElementById("login-hidden-container").style.display = "block";
+
+    // Ocultar los botones de editar y eliminar en todos los eventos
+    const accionesEventos = document.querySelectorAll(".acciones-evento");
+    accionesEventos.forEach(accion => accion.style.display = "none");
+
+    // Mostrar mensaje de despedida
+    alert("Has cerrado sesión correctamente.");
+}
+
+    // Verificar si el usuario ya está autenticado al cargar la página
+    document.addEventListener("DOMContentLoaded", function () {
+    const sesionActiva = localStorage.getItem("sesionActiva");
+
+    if (sesionActiva === "true") {
+        const usuario = localStorage.getItem("usuario");
+        iniciarSesion(usuario);
+
+    } else {
+        // Ocultar la sección "Añadir Evento" si no hay sesión activa
+        document.getElementById("añadir-evento").style.display = "none";
+        // Ocultar botones de editar y eliminar si no hay sesión activa
+        const accionesEventos = document.querySelectorAll(".acciones-evento");
+        accionesEventos.forEach(accion => accion.style.display = "none");
+    }
+});
+
+        // Manejar el envío del formulario de inicio de sesión
+        document.getElementById("form-login").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById("username").value.trim();
+            const contraseña = document.getElementById("password").value.trim();
+
+            if (!usuario || !contraseña) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            if (validarCredenciales(usuario, contraseña)) {
+                iniciarSesion(usuario);
+            } else {
+                document.getElementById("error-message").style.display = "block";
+            }
         });
 
-        // Menú hamburguesa
+        // Asignar la función de cerrar sesión al botón correspondiente
+        document.getElementById("btn-logout").addEventListener("click", cerrarSesion);
+
+        // Mostrar el formulario de inicio de sesión al hacer clic en el botón oculto
+        document.getElementById("btn-login-hidden").addEventListener("click", mostrarLogin);
+
+        // JavaScript para manejar el "Leer más" y "Leer menos"
         document.addEventListener("DOMContentLoaded", function() {
-            const menuIcon = document.getElementById("menu-icon");
-            const navMenu = document.getElementById("nav-menu").querySelector("ul");
-            menuIcon.addEventListener("click", (e) => {
-                e.stopPropagation();
-                navMenu.classList.toggle("active");
-            });
-            document.addEventListener("click", (e) => {
-                if (!navMenu.contains(e.target) && !menuIcon.contains(e.target)) {
-                    navMenu.classList.remove("active");
-                }
-            });
-            document.querySelectorAll("#nav-menu ul li a").forEach(enlace => {
-                enlace.addEventListener("click", () => navMenu.classList.remove("active"));
-            });
-        });
-
-// "Leer más" y "Leer menos"
-document.addEventListener("DOMContentLoaded", () => {
             const leerMas = document.querySelector(".leer-mas");
             const leerMenos = document.querySelector(".leer-menos");
             const contenidoCompleto = document.querySelector(".contenido-completo");
             const contenidoResumido = document.querySelector(".contenido-resumido");
-            leerMas.addEventListener("click", () => {
+
+            leerMas.addEventListener("click", function() {
                 contenidoCompleto.style.display = "block";
                 contenidoResumido.style.display = "none";
             });
-            leerMenos.addEventListener("click", () => {
+
+            leerMenos.addEventListener("click", function() {
                 contenidoCompleto.style.display = "none";
                 contenidoResumido.style.display = "block";
             });
         });
 
-         // Formulario de inicio de sesión
-         document.getElementById("form-login").addEventListener("submit", async (event) => {
-            event.preventDefault();
-            const email = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
-            if (email && password) await iniciarSesion(email, password);
+        // Array de imágenes de la galería
+const imagenes = [
+    "https://i.ibb.co/ZRFQ9kgz/photo-5039893652704440272-y.jpg",
+    "https://i.ibb.co/LX8H4Rwp/photo-5039893652704440273-y.jpg",
+    "https://i.ibb.co/F4mjFTqX/photo-5039893652704440271-y.jpg",
+    "https://i.ibb.co/4R3RGc9b/photo-5039893652704440270-y.jpg",
+    "https://i.ibb.co/FqbTV63M/photo-5039893652704440269-y.jpg"
+];
+
+let indiceActual = 0;
+
+// Pre-cargar imágenes
+imagenes.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
+// Función para abrir la galería
+function abrirGaleria(indice) {
+    indiceActual = indice;
+    const modal = document.getElementById("modal-galeria");
+    const imagenModal = document.getElementById("imagen-modal");
+    imagenModal.src = imagenes[indiceActual];
+    modal.style.display = "block";
+}
+
+// Función para cerrar la galería
+function cerrarGaleria() {
+    const modal = document.getElementById("modal-galeria");
+    modal.style.display = "none";
+}
+
+// Función para cambiar de foto
+function cambiarFoto(direccion) {
+    indiceActual += direccion;
+    if (indiceActual >= imagenes.length) {
+        indiceActual = 0;
+    } else if (indiceActual < 0) {
+        indiceActual = imagenes.length - 1;
+    }
+    const imagenModal = document.getElementById("imagen-modal");
+    imagenModal.src = imagenes[indiceActual];
+}
+
+// Actualizar el indicador de la imagen actual
+    const indicador = document.getElementById("indicador-imagen");
+    if (indicador) {
+        indicador.textContent = `${indiceActual + 1}/${imagenes.length}`;
+    }
+
+// Cerrar el modal al hacer clic fuera de la imagen
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("modal-galeria");
+    if (event.target === modal) {
+        cerrarGaleria();
+    }
+});
+
+   // Inicializar Flatpickr para el campo de hora
+flatpickr("#hora", {
+    enableTime: true, // Habilita la selección de hora
+    noCalendar: true, // Oculta el calendario (solo hora)
+    dateFormat: "h:i K", // Formato de 24 horas (ejemplo: 19:00)
+    time_24hr: true, // Usar formato de 24 horas
+    minuteIncrement: 15, // Incrementos de 15 minutos
+    placeholder: "Selecciona la hora", // Texto de placeholder
+});
+
+function validarURL(url) {
+  return /\.(jpeg|jpg|gif|png)$/.test(url);
+}
+
+// Función para editar un evento
+function editarEvento(botonEditar) {
+    const eventoCard = botonEditar.closest(".evento-card");
+    const titulo = eventoCard.querySelector("h3").textContent;
+    const fecha = eventoCard.querySelector(".evento-detalle:nth-child(2) p").textContent.replace("Fecha: ", "");
+    const hora = eventoCard.querySelector(".evento-detalle:nth-child(3) p").textContent.replace("Hora: ", "");
+    const locacion = eventoCard.querySelector(".evento-detalle:nth-child(4) p").textContent.replace("Locación: ", "");
+    const flyer = eventoCard.querySelector(".evento-flyer").src;
+
+    // Mostrar un formulario de edición con los datos actuales
+        const nuevoTitulo = prompt("Editar título:", titulo);
+        const nuevaFecha = prompt("Editar fecha:", fecha);
+        const nuevaHora = prompt("Editar hora:", hora);
+        const nuevaLocacion = prompt("Editar locación:", locacion);
+        const nuevoFlyer = prompt("Editar URL del flyer:", flyer);
+
+        // Actualizar los datos del evento si el usuario ingresó nuevos valores
+        if (nuevoTitulo) eventoCard.querySelector("h3").textContent = nuevoTitulo;
+        if (nuevaFecha) eventoCard.querySelector(".evento-detalle:nth-child(2) p").textContent = `Fecha: ${nuevaFecha}`;
+        if (nuevaHora) eventoCard.querySelector(".evento-detalle:nth-child(3) p").textContent = `Hora: ${nuevaHora}`;
+        if (nuevaLocacion) eventoCard.querySelector(".evento-detalle:nth-child(4) p").textContent = `Locación: ${nuevaLocacion}`;
+        if (nuevoFlyer) eventoCard.querySelector(".evento-flyer").src = nuevoFlyer;
+    }
+
+    // Función para eliminar un evento
+    function eliminarEvento(botonEliminar) {
+        const eventoCard = botonEliminar.closest(".evento-card");
+        const titulo = eventoCard.querySelector("h3").textContent;
+
+        if (confirm("¿Estás seguro de que quieres eliminar este evento?")) {
+            eventoCard.remove(); // Eliminar la tarjeta del evento
+    // Eliminar el evento de localStorage
+        const eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+        const nuevosEventos = eventos.filter(evento => evento.titulo !== titulo);
+        localStorage.setItem("eventos", JSON.stringify(nuevosEventos));
+    }
+}
+
+// Función para añadir un evento
+function añadirEvento(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+
+    // Obtener los valores del formulario
+    const titulo = document.getElementById("titulo").value.trim();
+    const fecha = document.getElementById("fecha").value.trim();
+    const hora = document.getElementById("hora").value.trim();
+    const locacion = document.getElementById("locacion").value.trim();
+    const flyer = document.getElementById("flyer").value.trim();
+
+    // Validar que todos los campos estén completos
+   if (!titulo || !fecha || !hora || !locacion || !flyer) {
+       alert("Por favor, completa todos los campos.");
+       return;
+   }
+
+   // Validar que la URL del flyer sea válida
+   if (!validarURL(flyer)) {
+       alert("Por favor, ingresa una URL válida de imagen (JPEG, JPG, GIF, PNG).");
+       return;
+   }
+
+   // Crear un objeto con la información del evento
+    const nuevoEvento = {
+        titulo,
+        fecha,
+        hora,
+        locacion,
+        flyer,
+    };
+
+    // Obtener los eventos guardados en localStorage
+    let eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+
+    // Añadir el nuevo evento al array
+    eventos.push(nuevoEvento);
+
+    // Guardar el array actualizado en localStorage
+    localStorage.setItem("eventos", JSON.stringify(eventos));
+
+    // Mostrar el evento en la página
+    mostrarEvento(nuevoEvento);
+
+    // Limpiar el formulario
+   document.getElementById("formulario-evento").reset();
+  }
+
+    //Función reutilizable para mostrar un evento en la página
+    function mostrarEvento(evento) {
+
+    // Crear la tarjeta del evento
+    const eventoCard = document.createElement("div");
+    eventoCard.classList.add("evento-card");
+
+    // Flyer del evento
+    const flyerImg = document.createElement("img");
+    flyerImg.src = evento.flyer;
+    flyerImg.alt = `Flyer del evento: ${evento.titulo}`;
+    flyerImg.classList.add("evento-flyer");
+
+    // Información del evento
+    const eventoInfo = document.createElement("div");
+    eventoInfo.classList.add("evento-info");
+
+    // Título del evento
+    const tituloEvento = document.createElement("h3");
+    tituloEvento.textContent = evento.titulo;
+
+    // Fecha del evento (con ícono)
+    const fechaEvento = document.createElement("div");
+    fechaEvento.classList.add("evento-detalle");
+    fechaEvento.innerHTML = `
+        <i class="fas fa-calendar-alt"></i>
+        <p><strong>Fecha:</strong> ${evento.fecha}</p>
+    `;
+
+   // Hora del evento (con ícono)
+   const horaEvento = document.createElement("div");
+    horaEvento.classList.add("evento-detalle");
+    horaEvento.innerHTML = `
+        <i class="fas fa-clock"></i>
+        <p><strong>Hora:</strong> ${evento.hora}</p>
+    `;
+
+   // Locación del evento (con ícono)
+   const locacionEvento = document.createElement("div");
+    locacionEvento.classList.add("evento-detalle");
+    locacionEvento.innerHTML = `
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Locación:</strong> ${evento.locacion}</p>
+    `;
+
+    // Botones de editar y eliminar (solo visibles para el administrador)
+    const accionesEvento = document.createElement("div");
+    accionesEvento.classList.add("acciones-evento");
+    accionesEvento.innerHTML = `
+        <button class="editar-evento" onclick="editarEvento(this)">
+            <i class="fas fa-edit"></i> <!-- Ícono de editar -->
+        </button>
+        <button class="eliminar-evento" onclick="eliminarEvento(this)">
+            <i class="fas fa-trash-alt"></i> <!-- Ícono de eliminar -->
+        </button>
+    `;
+
+    // Añadir todo al contenedor de información
+    eventoInfo.appendChild(tituloEvento);
+    eventoInfo.appendChild(fechaEvento);
+    eventoInfo.appendChild(horaEvento);
+    eventoInfo.appendChild(locacionEvento);
+    eventoInfo.appendChild(accionesEvento);
+
+    // Añadir el flyer y la información a la tarjeta
+    eventoCard.appendChild(flyerImg);
+    eventoCard.appendChild(eventoInfo);
+
+    // Añadir la tarjeta al contenedor de eventos
+    const contenedorEventos = document.getElementById("contenedor-eventos");
+    contenedorEventos.appendChild(eventoCard);
+
+    // Verificar si el usuario está autenticado
+    const sesionActiva = localStorage.getItem("sesionActiva");
+    if (sesionActiva === "true") {
+        accionesEvento.style.display = "flex"; // Mostrar los botones
+    } else {
+        accionesEvento.style.display = "none"; // Ocultar los botones
+    }
+
+    // Asignar la función de abrir modal a la nueva tarjeta
+    eventoCard.addEventListener("click", function () {
+        abrirModal(flyer); // Abre el modal con el flyer
+    });
+
+    // Limpiar el formulario
+    document.getElementById("formulario-evento").reset();
+}
+
+// Asignar la función al formulario
+document.getElementById("formulario-evento").addEventListener("submit", añadirEvento);
+
+// Función para cargar y mostrar los eventos guardados
+function cargarEventos() {
+    // Obtener los eventos guardados en localStorage
+    const eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+
+    // Mostrar cada evento en la página
+    eventos.forEach(evento => mostrarEvento(evento));
+}
+
+// Llamar a la función al cargar la página
+document.addEventListener("DOMContentLoaded", cargarEventos);
+
+// Función para abrir el modal con el flyer
+function abrirModal(flyerUrl) {
+  const modal = document.getElementById("modal-flyer");
+  const flyerGrande = document.getElementById("flyer-grande");
+  flyerGrande.src = flyerUrl; // Asigna la URL del flyer al modal
+  modal.style.display = "block"; // Muestra el modal
+}
+
+// Función para cerrar el modal
+function cerrarModal() {
+  const modal = document.getElementById("modal-flyer");
+  modal.style.display = "none"; // Oculta el modal
+}
+
+// Asignar la función de abrir modal a las tarjetas de eventos
+document.addEventListener("DOMContentLoaded", function () {
+    const tarjetasEventos = document.querySelectorAll(".evento-card");
+
+    tarjetasEventos.forEach(tarjeta => {
+        tarjeta.addEventListener("click", function () {
+            const flyerUrl = tarjeta.querySelector(".evento-flyer").src; // Obtiene la URL del flyer
+
+            console.log("Flyer URL:", flyerUrl); // Depuración
+            abrirModal(flyerUrl); // Abre el modal con el flyer
         });
+    });
+});
 
-        document.getElementById("btn-logout").addEventListener("click", cerrarSesion);
-        document.getElementById("btn-login-hidden").addEventListener("click", () => {
-            document.getElementById("login-form").style.display = "block";
-        });
+// Asignar la función al formulario
+document.getElementById("formulario-evento").addEventListener("submit", añadirEvento);
+// Asignar la función de cerrar modal al botón de cerrar
+document.querySelector(".cerrar").addEventListener("click", cerrarModal);
 
-        // Inicio de sesión con Supabase
-        async function iniciarSesion(email, password) {
-            try {
-                const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-                if (error) throw error;
-                localStorage.setItem("sesionActiva", "true");
-                localStorage.setItem("usuario", data.user.email);
-                document.getElementById("añadir-evento").style.display = "block";
-                document.getElementById("btn-logout").style.display = "block";
-                document.getElementById("login-form").style.display = "none";
-                document.getElementById("login-hidden-container").style.display = "none";
-                alert(`Bienvenido, ${data.user.email}!`);
-                cargarEventos();
-            } catch (error) {
-                document.getElementById("error-message").style.display = "block";
-                document.getElementById("error-message").textContent = "Error: " + error.message;
-            }
-        }
+// Cerrar el modal al hacer clic fuera de la imagen
+window.addEventListener("click", function (event) {
+    const modal = document.getElementById("modal-flyer");
+    if (event.target === modal) {
+        cerrarModal();
+    }
+});
 
-        // Cerrar sesión
-        async function cerrarSesion() {
-            await supabase.auth.signOut();
-            localStorage.removeItem("sesionActiva");
-            localStorage.removeItem("usuario");
-            document.getElementById("añadir-evento").style.display = "none";
-            document.getElementById("btn-logout").style.display = "none";
-            document.getElementById("login-hidden-container").style.display = "block";
-            alert("Has cerrado sesión correctamente.");
-            cargarEventos();
-        }
-
-        // Verificar sesión al cargar
-        document.addEventListener("DOMContentLoaded", async () => {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
-                localStorage.setItem("sesionActiva", "true");
-                localStorage.setItem("usuario", session.user.email);
-                document.getElementById("añadir-evento").style.display = "block";
-                document.getElementById("btn-logout").style.display = "block";
-            }
-            cargarEventos();
-        });
-    
-        // Flatpickr para hora
-        flatpickr("#hora", {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i",
-            time_24hr: true,
-            minuteIncrement: 15,
-            placeholder: "Selecciona la hora"
-        });
-
-        // Validar URL
-        function validarURL(url) {
-            return /\.(jpeg|jpg|gif|png)$/i.test(url);
-        }
-
-        // Añadir evento
-        async function añadirEvento(event) {
-            event.preventDefault();
-            const titulo = document.getElementById("titulo").value.trim();
-            const fecha = document.getElementById("fecha").value.trim();
-            const hora = document.getElementById("hora").value.trim();
-            const locacion = document.getElementById("locacion").value.trim();
-            const flyer = document.getElementById("flyer").value.trim();
-
-            if (!titulo || !fecha || !hora || !locacion || !flyer) {
-                alert("Por favor, completa todos los campos.");
-                return;
-            }
-
-            if (!validarURL(flyer)) {
-                alert("Por favor, ingresa una URL válida de imagen (JPEG, JPG, GIF, PNG).");
-                return;
-            }
-
-            try {
-                const { data, error } = await supabase
-                    .from('eventos')
-                    .insert([{ titulo, fecha, hora, locacion, flyer }])
-                    .select();
-                if (error) throw error;
-                mostrarEvento(data[0]);
-                document.getElementById("formulario-evento").reset();
-                alert("Evento añadido correctamente.");
-            } catch (error) {
-                alert("Error al guardar el evento: " + error.message);
-            }
-        }
-
-        // Cargar eventos
-        async function cargarEventos() {
-            try {
-                const { data, error } = await supabase
-                    .from('eventos')
-                    .select('*')
-                    .order('fecha', { ascending: true });
-                if (error) throw error;
-                const contenedorEventos = document.getElementById("contenedor-eventos");
-                contenedorEventos.innerHTML = '';
-                data.forEach(evento => mostrarEvento(evento));
-            } catch (error) {
-                alert("Error al cargar los eventos: " + error.message);
-            }
-        }
-
-        // Mostrar evento
-        function mostrarEvento(evento) {
-            const eventoCard = document.createElement("div");
-            eventoCard.classList.add("evento-card");
-            eventoCard.dataset.id = evento.id;
-
-            const flyerImg = document.createElement("img");
-            flyerImg.src = evento.flyer;
-            flyerImg.alt = `Flyer del evento: ${evento.titulo}`;
-            flyerImg.classList.add("evento-flyer");
-
-            const eventoInfo = document.createElement("div");
-            eventoInfo.classList.add("evento-info");
-
-            const tituloEvento = document.createElement("h3");
-            tituloEvento.textContent = evento.titulo;
-
-            const fechaEvento = document.createElement("div");
-            fechaEvento.classList.add("evento-detalle");
-            fechaEvento.innerHTML = `<i class="fas fa-calendar-alt"></i><p><strong>Fecha:</strong> ${evento.fecha}</p>`;
-
-            const horaEvento = document.createElement("div");
-            horaEvento.classList.add("evento-detalle");
-            horaEvento.innerHTML = `<i class="fas fa-clock"></i><p><strong>Hora:</strong> ${evento.hora}</p>`;
-
-            const locacionEvento = document.createElement("div");
-            locacionEvento.classList.add("evento-detalle");
-            locacionEvento.innerHTML = `<i class="fas fa-map-marker-alt"></i><p><strong>Locación:</strong> ${evento.locacion}</p>`;
-
-            const accionesEvento = document.createElement("div");
-            accionesEvento.classList.add("acciones-evento");
-            accionesEvento.innerHTML = `
-                <button class="editar-evento" onclick="editarEvento(this)"><i class="fas fa-edit"></i></button>
-                <button class="eliminar-evento" onclick="eliminarEvento(this)"><i class="fas fa-trash-alt"></i></button>
-            `;
-
-            eventoInfo.append(tituloEvento, fechaEvento, horaEvento, locacionEvento, accionesEvento);
-            eventoCard.append(flyerImg, eventoInfo);
-            document.getElementById("contenedor-eventos").appendChild(eventoCard);
-
-            const sesionActiva = localStorage.getItem("sesionActiva");
-            accionesEvento.style.display = sesionActiva === "true" ? "flex" : "none";
-
-            eventoCard.addEventListener("click", (e) => {
-                if (!e.target.closest(".acciones-evento")) abrirModal(evento.flyer);
-            });
-        }
-
-        // Editar evento
-        async function editarEvento(botonEditar) {
-            const eventoCard = botonEditar.closest(".evento-card");
-            const id = eventoCard.dataset.id;
-            const titulo = eventoCard.querySelector("h3").textContent;
-            const fecha = eventoCard.querySelector(".evento-detalle:nth-child(2) p").textContent.replace("Fecha: ", "");
-            const hora = eventoCard.querySelector(".evento-detalle:nth-child(3) p").textContent.replace("Hora: ", "");
-            const locacion = eventoCard.querySelector(".evento-detalle:nth-child(4) p").textContent.replace("Locación: ", "");
-            const flyer = eventoCard.querySelector(".evento-flyer").src;
-
-            const nuevoTitulo = prompt("Editar título:", titulo);
-            const nuevaFecha = prompt("Editar fecha:", fecha);
-            const nuevaHora = prompt("Editar hora:", hora);
-            const nuevaLocacion = prompt("Editar locación:", locacion);
-            const nuevoFlyer = prompt("Editar URL del flyer:", flyer);
-
-            if (nuevoTitulo && nuevaFecha && nuevaHora && nuevaLocacion && nuevoFlyer) {
-                try {
-                    const { error } = await supabase
-                        .from('eventos')
-                        .update({ titulo: nuevoTitulo, fecha: nuevaFecha, hora: nuevaHora, locacion: nuevaLocacion, flyer: nuevoFlyer })
-                        .eq('id', id);
-                    if (error) throw error;
-                    eventoCard.querySelector("h3").textContent = nuevoTitulo;
-                    eventoCard.querySelector(".evento-detalle:nth-child(2) p").textContent = `Fecha: ${nuevaFecha}`;
-                    eventoCard.querySelector(".evento-detalle:nth-child(3) p").textContent = `Hora: ${nuevaHora}`;
-                    eventoCard.querySelector(".evento-detalle:nth-child(4) p").textContent = `Locación: ${nuevaLocacion}`;
-                    eventoCard.querySelector(".evento-flyer").src = nuevoFlyer;
-                    alert("Evento actualizado correctamente.");
-                } catch (error) {
-                    alert("Error al editar el evento: " + error.message);
-                }
-            }
-        }
-
-        // Eliminar evento
-        async function eliminarEvento(botonEliminar) {
-            const eventoCard = botonEliminar.closest(".evento-card");
-            const id = eventoCard.dataset.id;
-
-            if (confirm("¿Estás seguro de que quieres eliminar este evento?")) {
-                try {
-                    const { error } = await supabase
-                        .from('eventos')
-                        .delete()
-                        .eq('id', id);
-                    if (error) throw error;
-                    eventoCard.remove();
-                    alert("Evento eliminado correctamente.");
-                } catch (error) {
-                    alert("Error al eliminar el evento: " + error.message);
-                }
-            }
-        }
-
-        // Modal de flyer
-        function abrirModal(flyerUrl) {
-            document.getElementById("flyer-grande").src = flyerUrl;
-            document.getElementById("modal-flyer").style.display = "block";
-        }
-
-        function cerrarModal() {
-            document.getElementById("modal-flyer").style.display = "none";
-        }
-
-        window.addEventListener("click", (event) => {
-            const modal = document.getElementById("modal-flyer");
-            if (event.target === modal) cerrarModal();
-        });
-
-        document.querySelector(".cerrar").addEventListener("click", cerrarModal);
-        document.getElementById("formulario-evento").addEventListener("submit", añadirEvento);
     </script>
 </body>
 </html>
